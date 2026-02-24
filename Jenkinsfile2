@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Use Credentials') {
+            steps {
+                withCredentials([usernamePassword(
+                    credentialsId: '0a8b3a91-ced6-4ccc-bf21-499b95167982',
+                    usernameVariable: 'USERNAME',
+                    passwordVariable: 'PASSWORD'
+                )]) {
+                    sh '''
+                        echo "Username: $USERNAME"
+                        echo "Password: $PASSWORD"
+                    '''
+                }
+            }
+        }
+    }
+}
