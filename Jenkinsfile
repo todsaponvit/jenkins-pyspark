@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                sh '/opt/spark/bin/spark-submit zipcodes.py'
+                sh 'spark-submit zipcodes.py'
             }
         }
     }
