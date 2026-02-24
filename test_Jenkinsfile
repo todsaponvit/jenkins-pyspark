@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                sh 'python3 --version'
+            }
+        }
+        stage('Hello2') {
+            steps {
+                sh 'export SPARK_HOME=/opt/spark'
+                sh 'export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin'
+                sh 'export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64'
+                sh 'export PYTHONPATH=$SPARK_HOME/python:$PYTHONPATH'
+                sh 'export PYSPARK_PYTHON=/usr/bin/python3'
+            }
+        }
+        stage('Hello3') {
+            steps {
+                sh 'export PYSPARK_SUBMIT=/opt/spark/bin/spark-submit'
+                sh 'export PYSPARK=/opt/spark/bin/pyspark'
+                sh '/opt/spark/bin/pyspark --version'
+            }
+        }
+    }
+}
