@@ -19,13 +19,6 @@ spark = SparkSession.builder\
         # .config("spark.hadoop.fs.s3a.connection.ssl.enabled", "false") \
         # .getOrCreate()
 
-# MySQL Connection
-MYSQL_HOST = '34.136.184.58'
-MYSQL_PORT = '3306'
-MYSQL_USER = 'r2de2'
-MYSQL_PASSWORD = 'I_Love_Data_Engineer'
-MYSQL_DB = 'r2de2'
-
 # Read Table
 audible_data = spark.read\
                 .format("jdbc") \
