@@ -9,10 +9,7 @@ pipeline {
                     usernameVariable: 'USERNAME',
                     passwordVariable: 'PASSWORD'
                 )]) {
-                    sh '''
-                        echo "Username: $USERNAME"
-                        echo "Password: $PASSWORD"
-                    '''
+                    sh 'python3 exam.py'
                 }
             }
         }
