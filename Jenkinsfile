@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                sh 'spark-submit zipcodes.py'
+                sh 'pyspark --version'
             }
         }
     }
