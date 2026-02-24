@@ -2,14 +2,14 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('zipcodes') {
             steps {
                 sh '/opt/spark/bin/spark-submit zipcodes.py'
             }
         }
-        stage('Hello-2') {
+        stage('rustfs') {
             steps {
-                echo 'env.pyspark'
+                sh '/opt/spark/bin/spark-submit rustfs.py'
             }
         }
     }
